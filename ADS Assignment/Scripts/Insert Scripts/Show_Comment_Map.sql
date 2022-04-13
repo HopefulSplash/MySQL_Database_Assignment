@@ -1,0 +1,15 @@
+INSERT INTO Show_Comment_Map VALUES (1, 1);
+INSERT INTO Show_Comment_Map VALUES (1, 1);
+INSERT INTO Show_Comment_Map VALUES (1, 1);
+INSERT INTO Show_Comment_Map VALUES (2, 2);
+INSERT INTO Show_Comment_Map VALUES (3, 2);
+INSERT INTO Show_Comment_Map VALUES (5, 5);
+INSERT INTO Show_Comment_Map VALUES (6, 4);
+INSERT INTO Show_Comment_Map VALUES (7, 6);
+INSERT INTO Show_Comment_Map VALUES (8, 7);
+INSERT INTO Show_Comment_Map VALUES (9, 7);
+INSERT INTO Show_Comment_Map VALUES (9, 8);
+INSERT INTO Show_Comment_Map VALUES (1, 9);
+INSERT INTO Show_Comment_Map VALUES (8, 10);
+INSERT INTO Show_Comment_Map VALUES (6, 11);
+INSERT INTO Show_Comment_Map VALUES (3, 12);

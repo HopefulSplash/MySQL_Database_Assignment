@@ -1,0 +1,22 @@
+
+INSERT INTO Show_Staff_Map VALUES (1, 1, 1);
+INSERT INTO Show_Staff_Map VALUES (3, 1, 0);
+INSERT INTO Show_Staff_Map VALUES (4, 2, 1);
+INSERT INTO Show_Staff_Map VALUES (4, 4, 0);
+INSERT INTO Show_Staff_Map VALUES (5, 4, 1);
+INSERT INTO Show_Staff_Map VALUES (1, 4, 0);
+INSERT INTO Show_Staff_Map VALUES (2, 5, 1);
+INSERT INTO Show_Staff_Map VALUES (3, 5, 0);
+INSERT INTO Show_Staff_Map VALUES (1, 7, 1);
+INSERT INTO Show_Staff_Map VALUES (2, 6, 1);
+INSERT INTO Show_Staff_Map VALUES (5, 8, 1);
+INSERT INTO Show_Staff_Map VALUES (4, 9, 0);
+INSERT INTO Show_Staff_Map VALUES (3, 9, 1);
+INSERT INTO Show_Staff_Map VALUES (2, 10, 1);
+INSERT INTO Show_Staff_Map VALUES (1, 11, 1);
+INSERT INTO Show_Staff_Map VALUES (2, 12, 1);
+INSERT INTO Show_Staff_Map VALUES (3, 12, 0);
+INSERT INTO Show_Staff_Map VALUES (4, 13, 0);
+INSERT INTO Show_Staff_Map VALUES (5, 13, 0);
+INSERT INTO Show_Staff_Map VALUES (1, 13, 1);
+INSERT INTO Show_Staff_Map VALUES (1, 3, 1);

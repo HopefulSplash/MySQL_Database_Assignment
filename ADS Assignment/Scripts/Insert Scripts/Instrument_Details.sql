@@ -1,0 +1,13 @@
+INSERT INTO Instrument_Details VALUES ('Piano');
+INSERT INTO Instrument_Details VALUES ('Triangle');
+INSERT INTO Instrument_Details VALUES ('Drums');
+INSERT INTO Instrument_Details VALUES ('Acoustic Guitar');
+INSERT INTO Instrument_Details VALUES ('Electric Guitar');
+INSERT INTO Instrument_Details VALUES ('Keyboard');
+INSERT INTO Instrument_Details VALUES ('Violin');
+INSERT INTO Instrument_Details VALUES ('Cello');
+INSERT INTO Instrument_Details VALUES ('Bass Guitar');
+INSERT INTO Instrument_Details VALUES ('Saxophone');
+INSERT INTO Instrument_Details VALUES ('Trumpet');
+INSERT INTO Instrument_Details VALUES ('Electronically Generated');
+INSERT INTO Instrument_Details VALUES ('Synthesizer');

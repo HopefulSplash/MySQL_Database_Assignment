@@ -1,0 +1,69 @@
+CREATE FUNCTION getStaffSongPlayCount_udf (@nStaffFName varchar(35), @nStaffSName varchar(35))
+    RETURNS TABLE
+AS
+RETURN
+SELECT Count(Song_Details.song_Title) AS 'Songs Played' FROM  Song_Details INNER JOIN
+                         Playlist_Song_Map ON Song_Details.song_Details_ID = Playlist_Song_Map.song_Details_ID INNER JOIN
+                         Playlist_Details ON Playlist_Song_Map.playlist_Details_ID = Playlist_Details.playlist_Details_ID
+
+					Where Playlist_Song_Map.staff_Details_ID = (SELECT Staff_Details.staff_Details_ID FROM Staff_Details 
+																WHERE Staff_Details.staff_FName = @nStaffFName AND Staff_Details.staff_SName = @nStaffSName)
+GO
+				 
+CREATE FUNCTION getNumberDays_udf (@sDate date)
+RETURNS INT
+AS
+BEGIN
+DECLARE @nDay int
+
+SET @nDay = DATEDIFF(day, @sDate, GETDATE());
+
+RETURN @nDay
+END
+
+
+CREATE FUNCTION getSongPlayCount_udf (@nPlay_Count int)
+    RETURNS TABLE
+AS
+RETURN
+    (
+		SELECT        song_Title, song_Duration, song_Play_Count, song_Added
+		FROM            Song_Details
+		WHERE song_Play_Count >= @nPlay_Count
+    )
+
+
+CREATE FUNCTION getShowOccurrence_udf (@nStaffFName varchar(35), @nStaffSName varchar(35))
+    RETURNS int
+AS
+BEGIN
+
+DECLARE @nShows int
+
+SET @nShows = (SELECT Count(Show_Instance.show_Instance_ID) AS 'Show Played' FROM  Show_Instance INNER JOIN
+                    Show_Staff_Map ON Show_Instance.show_Instance_ID = Show_Staff_Map.show_Instance_ID
+				WHERE Show_Staff_Map.staff_Details_ID = (SELECT Staff_Details.staff_Details_ID FROM Staff_Details 
+																WHERE Staff_Details.staff_FName = @nStaffFName AND Staff_Details.staff_SName = @nStaffSName))
+RETURN @nShows
+END
+
+CREATE VIEW all_Comments AS
+SELECT   Comment_Details.comment_Message, Comment_Details.comment_Type, Show_Instance.show_Details_ID  FROM            Comment_Details INNER JOIN
+                         Show_Comment_Map ON Comment_Details.comment_Details_ID = Show_Comment_Map.comment_Details_ID INNER JOIN
+                         Show_Instance ON Show_Comment_Map.show_Instance_ID = Show_Instance.show_Instance_ID
+					
+CREATE FUNCTION getNumberRequest_udf ( @rSong varchar (255) )
+RETURNS INT
+AS
+BEGIN
+DECLARE @nSong int
+
+SET @nSong = (SELECT COUNT(Request_Details.request_Song) From Request_Details
+		WHERE Request_Details.request_Song = @rSong)
+
+RETURN @nSong
+END
+
+
+
+

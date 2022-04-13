@@ -1,0 +1,363 @@
+
+INSERT INTO Address_Details VALUES ('122 Corporation Street', 'ST16 3LS', 'Stafford','Staffordshire');
+INSERT INTO Address_Details VALUES ('23 Meyrick Road', 'ST17 4DG', 'Stafford','Staffordshire');
+INSERT INTO Address_Details VALUES ('102 Corporation Street', 'ST16 1LS', 'Stafford','Staffordshire');
+INSERT INTO Address_Details VALUES ('Summer Hill Farm', 'ST13 2FH', 'Stoke','Staffordshire');
+INSERT INTO Address_Details VALUES ('Rosy Lane', 'SD1 31LS', 'Eccleshall','Staffordshire');
+
+INSERT INTO Staff_Details VALUES (1,'Mr','Harry','Clewlow','0777777777','Harry.Clewlow.1993@gmail.com','DJ, Producer');
+INSERT INTO Staff_Details VALUES (2,'Mrs','Sam','Smith','0773777777','Sam.Smith.1973@gmail.com',' Producer');
+INSERT INTO Staff_Details VALUES (3,'Master','Dave','Paulson','0771777777','Dave.Paulson.1997@yahoo.com','DJ');
+INSERT INTO Staff_Details VALUES (4,'Ms','Jess','Robinson','0727777777','Jess.Robinson.1963@me.com','Producer, Host');
+INSERT INTO Staff_Details VALUES (5,'Miss','Laura','Sutton','0777777747','Laura.Sutton.1993@hotmail.com','DJ, Host');
+
+INSERT INTO Contract_Details VALUES ('Intern', '20120202','20130423');
+INSERT INTO Contract_Details VALUES ('Full Time Permanent', '20120424', NULL);
+INSERT INTO Contract_Details VALUES ('Volunteer', '20110213', NULL);
+INSERT INTO Contract_Details VALUES ('Part Time', '20100513', NULL);
+INSERT INTO Contract_Details VALUES ('Casual Contract', '20120722', NULL);
+INSERT INTO Contract_Details VALUES ('Full Time Permanent', '20130606', NULL);
+
+INSERT INTO Staff_Contract_Map VALUES (1, 1);
+INSERT INTO Staff_Contract_Map VALUES (2, 1);
+INSERT INTO Staff_Contract_Map VALUES (3, 2);
+INSERT INTO Staff_Contract_Map VALUES (4, 3);
+INSERT INTO Staff_Contract_Map VALUES (5, 4);
+INSERT INTO Staff_Contract_Map VALUES (6, 5);
+
+INSERT INTO Comment_Details VALUES ('Nice Show ', 'Positive');
+INSERT INTO Comment_Details VALUES ('Not Your Best Show', 'Negative');
+INSERT INTO Comment_Details VALUES ('Really Bad Show Never Listening Again', 'Negative');
+INSERT INTO Comment_Details VALUES ('Amazing Show Guys !!!!', 'Positive');
+INSERT INTO Comment_Details VALUES ('This Show Needs More Air Time, Keep Up The Great Work', 'Positive');
+INSERT INTO Comment_Details VALUES ('Why Talk About Dogs For An Hour MORE MUSIC PLEASE!!', 'Negative');
+INSERT INTO Comment_Details VALUES ('Nice To See Special Guests On The Show', 'Positive');
+INSERT INTO Comment_Details VALUES ('WORST SHOW SO FAR !!!!!!!!', 'Negative');
+INSERT INTO Comment_Details VALUES ('Good Shows Today', 'Positive');
+INSERT INTO Comment_Details VALUES ('THIS WEEK HAD REALLY BAD MUSIC', 'Negative');
+INSERT INTO Comment_Details VALUES ('Nice', 'Positive');
+INSERT INTO Comment_Details VALUES ('The Adverts Are Not Relevant To Me', 'Negative');
+
+INSERT INTO Suitability_Details VALUES ('Pre-School');
+INSERT INTO Suitability_Details VALUES ('Junior School');
+INSERT INTO Suitability_Details VALUES ('Secondary School');
+INSERT INTO Suitability_Details VALUES ('Adult');
+INSERT INTO Suitability_Details VALUES ('Older Citizen');
+INSERT INTO Suitability_Details VALUES ('Risky');
+
+INSERT INTO Instrument_Details VALUES ('Piano');
+INSERT INTO Instrument_Details VALUES ('Triangle');
+INSERT INTO Instrument_Details VALUES ('Drums');
+INSERT INTO Instrument_Details VALUES ('Acoustic Guitar');
+INSERT INTO Instrument_Details VALUES ('Electric Guitar');
+INSERT INTO Instrument_Details VALUES ('Keyboard');
+INSERT INTO Instrument_Details VALUES ('Violin');
+INSERT INTO Instrument_Details VALUES ('Cello');
+INSERT INTO Instrument_Details VALUES ('Bass Guitar');
+INSERT INTO Instrument_Details VALUES ('Saxophone');
+INSERT INTO Instrument_Details VALUES ('Trumpet');
+INSERT INTO Instrument_Details VALUES ('Electronically Generated');
+INSERT INTO Instrument_Details VALUES ('Synthesizer');
+
+INSERT INTO Genre_Details VALUES ('Alternative');
+INSERT INTO Genre_Details VALUES ('Blues');
+INSERT INTO Genre_Details VALUES ('Classical');
+INSERT INTO Genre_Details VALUES ('Country');
+INSERT INTO Genre_Details VALUES ('Dance');
+INSERT INTO Genre_Details VALUES ('Easy Listening');
+INSERT INTO Genre_Details VALUES ('Electronic');
+INSERT INTO Genre_Details VALUES ('European');
+INSERT INTO Genre_Details VALUES ('Hip Hop / Rap');
+INSERT INTO Genre_Details VALUES ('Indie Pop');
+INSERT INTO Genre_Details VALUES ('Asian Pop');
+INSERT INTO Genre_Details VALUES ('Jazz');
+INSERT INTO Genre_Details VALUES ('Opera');
+INSERT INTO Genre_Details VALUES ('Musical');
+INSERT INTO Genre_Details VALUES ('Popular');
+INSERT INTO Genre_Details VALUES ('Modern');
+
+INSERT INTO Show_Details VALUES ('Your Choice Show','Daily');
+INSERT INTO Show_Details VALUES ('Sunday Night Live','Weekly');
+INSERT INTO Show_Details VALUES ('Not Your Choice','Daily');
+INSERT INTO Show_Details VALUES ('Chart Show','Weekly');
+INSERT INTO Show_Details VALUES ('Late Nights With Sam','One Off Broadcast');
+INSERT INTO Show_Details VALUES ('Breakfast Show','Daily');
+INSERT INTO Show_Details VALUES ('Classics Hour','Weekly');
+INSERT INTO Show_Details VALUES ('Sports Zone','Monthly');
+INSERT INTO Show_Details VALUES ('Requests Show','Weekly');
+INSERT INTO Show_Details VALUES ('Dedication Show','Weekly');
+
+INSERT INTO Performer_Details  VALUES ('Paul', 'Smith', 'Lead Vocals');
+INSERT INTO Performer_Details VALUES ('Dan', 'Smath', 'Lead Guitar');
+INSERT INTO Performer_Details VALUES ('Alex', 'Boxman', 'Singer');
+INSERT INTO Performer_Details VALUES ('Dan', 'Cueton', 'Pianist');
+INSERT INTO Performer_Details VALUES ('Patrick', 'Croft', 'Guitar');
+INSERT INTO Performer_Details VALUES ('Dave', 'Yau', 'Bass');
+INSERT INTO Performer_Details  VALUES ('Sam', 'Burton', 'Pianist ');
+INSERT INTO Performer_Details VALUES ('Harry', 'Cambridge', 'DJ');
+INSERT INTO Performer_Details VALUES ('Paul', 'Stafford', 'Singer');
+INSERT INTO Performer_Details VALUES ('Bill', 'Cave', 'Vocals');
+INSERT INTO Performer_Details VALUES ('Ronnie', 'Green', 'Violin');
+INSERT INTO Performer_Details VALUES ('George', 'Blue', 'Pianist');
+
+INSERT INTO Album_Details VALUES ('The Greatest Hit');
+INSERT INTO Album_Details VALUES ('Really Bad Songs');
+INSERT INTO Album_Details VALUES ('WOW You Listen To This');
+
+INSERT INTO Organisation_Details VALUES ('The Red Stones', 'Band', 1, '20120501');
+INSERT INTO Organisation_Details VALUES ('Ellesmere Junior Choir', 'Choir', 0, '20121107');
+INSERT INTO Organisation_Details VALUES ('Ellesmere Senior Orchestra', 'School Orchestra', 1, '20120209');
+INSERT INTO Organisation_Details VALUES ('The Bloody Wolves', 'Band', 0, '20131215');
+INSERT INTO Organisation_Details VALUES ('Beaconside Community Choir', 'Choir', 1, '20131215');
+
+INSERT INTO Composer_Details VALUES ('Paul', 'Stafford');
+INSERT INTO Composer_Details VALUES ('Bill', 'Cave');
+INSERT INTO Composer_Details VALUES ('Ronnie', 'Green');
+INSERT INTO Composer_Details VALUES ('George', 'Blue');
+
+INSERT INTO Song_Details VALUES ('A Song', '00:02:00', default, '20101209');
+INSERT INTO Song_Details VALUES ('B Song', '00:15:30', default, '20100906');
+INSERT INTO Song_Details VALUES ('C Song', '00:45:30', default, '20100104');
+INSERT INTO Song_Details VALUES ('D Song', '00:03:32', default, '20100203');
+INSERT INTO Song_Details VALUES ('E Song', '00:03:12', default, '20101202');
+INSERT INTO Song_Details VALUES ('F Song', '00:04:37', default, '20101106');
+INSERT INTO Song_Details VALUES ('G Song', '00:05:56', default, '20100701');
+INSERT INTO Song_Details VALUES ('H Song', '00:05:30', default, '20100308');
+INSERT INTO Song_Details VALUES ('I Song', '00:02:30', default, '20100210');
+INSERT INTO Song_Details VALUES ('J Song', '00:02:30', default, '20100511');
+INSERT INTO Song_Details VALUES ('K Song', '00:02:30', default, default);
+
+INSERT INTO  Playlist_Details VALUES ('Your Choice Show #1');
+INSERT INTO  Playlist_Details VALUES ('Sunday Night Live #12');
+INSERT INTO  Playlist_Details VALUES ('Not Your Choice Show #3');
+INSERT INTO  Playlist_Details VALUES ('Chart Show #43');
+INSERT INTO  Playlist_Details VALUES ('Breakfast Show #653');
+INSERT INTO  Playlist_Details VALUES ('Late Nights With Sam # 9');
+INSERT INTO  Playlist_Details VALUES ('Sports Zone #54');
+INSERT INTO  Playlist_Details VALUES ('Classics Hour #254');
+INSERT INTO  Playlist_Details VALUES ('Requests Show #54');
+INSERT INTO  Playlist_Details VALUES ('Dedication Show #1');
+
+INSERT INTO Show_Instance VALUES (1 , 1 ,'20131209','18:00:00');
+INSERT INTO Show_Instance VALUES (2 , 2 ,'20120821','12:00:00');
+INSERT INTO Show_Instance VALUES (3 , 3 ,'20120301','10:00:00');
+INSERT INTO Show_Instance VALUES (4 , 4 ,'20131214','17:00:00');
+INSERT INTO Show_Instance VALUES (5 , 5 ,'20130427','23:30:00');
+INSERT INTO Show_Instance VALUES (6 , 6 ,'20131209','07:00:00');
+INSERT INTO Show_Instance VALUES (6 , 6 ,'20131210','07:00:00');
+INSERT INTO Show_Instance VALUES (6 , 6 ,'20131211','07:00:00');
+INSERT INTO Show_Instance VALUES (7 , 7 ,'20111215','16:00:00');
+INSERT INTO Show_Instance VALUES (8 , 8 ,'20111221','13:30:00');
+INSERT INTO Show_Instance VALUES (9 , 9 ,'20110502','04:45:00');
+INSERT INTO Show_Instance VALUES (10, 10 ,'20110813','22:55:00');
+
+INSERT INTO Show_Comment_Map VALUES (1, 1);
+INSERT INTO Show_Comment_Map VALUES (1, 1);
+INSERT INTO Show_Comment_Map VALUES (1, 1);
+INSERT INTO Show_Comment_Map VALUES (2, 2);
+INSERT INTO Show_Comment_Map VALUES (3, 2);
+INSERT INTO Show_Comment_Map VALUES (5, 5);
+INSERT INTO Show_Comment_Map VALUES (6, 4);
+INSERT INTO Show_Comment_Map VALUES (7, 6);
+INSERT INTO Show_Comment_Map VALUES (8, 7);
+INSERT INTO Show_Comment_Map VALUES (9, 7);
+INSERT INTO Show_Comment_Map VALUES (9, 8);
+INSERT INTO Show_Comment_Map VALUES (1, 9);
+INSERT INTO Show_Comment_Map VALUES (8, 10);
+INSERT INTO Show_Comment_Map VALUES (6, 11);
+
+INSERT INTO Show_Staff_Map VALUES (1, 1, 1);
+INSERT INTO Show_Staff_Map VALUES (3, 1, 0);
+INSERT INTO Show_Staff_Map VALUES (4, 2, 1);
+INSERT INTO Show_Staff_Map VALUES (1, 3, 1);
+INSERT INTO Show_Staff_Map VALUES (4, 4, 0);
+INSERT INTO Show_Staff_Map VALUES (5, 4, 1);
+INSERT INTO Show_Staff_Map VALUES (1, 4, 0);
+INSERT INTO Show_Staff_Map VALUES (2, 5, 1);
+INSERT INTO Show_Staff_Map VALUES (3, 5, 0);
+INSERT INTO Show_Staff_Map VALUES (1, 7, 1);
+INSERT INTO Show_Staff_Map VALUES (2, 6, 1);
+INSERT INTO Show_Staff_Map VALUES (5, 8, 1);
+INSERT INTO Show_Staff_Map VALUES (4, 9, 0);
+INSERT INTO Show_Staff_Map VALUES (3, 9, 1);
+INSERT INTO Show_Staff_Map VALUES (2, 10, 1);
+
+INSERT INTO Playlist_Song_Map VALUES (1, 1, 1);
+INSERT INTO Playlist_Song_Map VALUES (1, 2, 1);
+INSERT INTO Playlist_Song_Map VALUES (1, 3, 1);
+INSERT INTO Playlist_Song_Map VALUES (2, 4, 4);
+INSERT INTO Playlist_Song_Map VALUES (2, 5, 4);
+INSERT INTO Playlist_Song_Map VALUES (2, 6, 4);
+INSERT INTO Playlist_Song_Map VALUES (3, 7, 1);
+INSERT INTO Playlist_Song_Map VALUES (3, 8, 1);
+INSERT INTO Playlist_Song_Map VALUES (3, 9, 1);
+INSERT INTO Playlist_Song_Map VALUES (4, 10, 5);
+INSERT INTO Playlist_Song_Map VALUES (4, 9, 5);
+INSERT INTO Playlist_Song_Map VALUES (4, 8, 5);
+INSERT INTO Playlist_Song_Map VALUES (5, 7, 2);
+INSERT INTO Playlist_Song_Map VALUES (5, 6, 2);
+INSERT INTO Playlist_Song_Map VALUES (5, 5, 2);
+INSERT INTO Playlist_Song_Map VALUES (6, 4, 2);
+INSERT INTO Playlist_Song_Map VALUES (6, 3, 2);
+INSERT INTO Playlist_Song_Map VALUES (6, 2, 2);
+INSERT INTO Playlist_Song_Map VALUES (7, 1, 1);
+INSERT INTO Playlist_Song_Map VALUES (7, 2, 1);
+INSERT INTO Playlist_Song_Map VALUES (7, 3, 1);
+INSERT INTO Playlist_Song_Map VALUES (8, 4, 5);
+INSERT INTO Playlist_Song_Map VALUES (8, 5, 5);
+INSERT INTO Playlist_Song_Map VALUES (8, 6, 5);
+
+INSERT INTO Genre_List_Map VALUES (1, 1, 1);
+INSERT INTO Genre_List_Map VALUES (2, 2, 5);
+INSERT INTO Genre_List_Map VALUES (3, 4, 1);
+INSERT INTO Genre_List_Map VALUES (4, 1, 4);
+INSERT INTO Genre_List_Map VALUES (5, 2, 1);
+INSERT INTO Genre_List_Map VALUES (6, 1, 3);
+INSERT INTO Genre_List_Map VALUES (7, 7, NULL);
+INSERT INTO Genre_List_Map VALUES (8, 9, 6);
+INSERT INTO Genre_List_Map VALUES (9, 1, NULL);
+INSERT INTO Genre_List_Map VALUES (10,10, NULL);
+INSERT INTO Genre_List_Map VALUES (11, 3, 1);
+INSERT INTO Genre_List_Map VALUES (12, NULL, 1);
+INSERT INTO Genre_List_Map VALUES (13, 1, 3);
+INSERT INTO Genre_List_Map VALUES (14, 5, NULL);
+INSERT INTO Genre_List_Map VALUES (15, 7, 2);
+INSERT INTO Genre_List_Map VALUES (16, NULL, 7);
+INSERT INTO Genre_List_Map VALUES (2, 6, 8);
+INSERT INTO Genre_List_Map VALUES (3, 8, 9);
+
+INSERT INTO Suitability_List_Map VALUES (1, 1, 1);
+INSERT INTO Suitability_List_Map VALUES (2, 1, 1);
+INSERT INTO Suitability_List_Map VALUES (3, 1, NULL);
+INSERT INTO Suitability_List_Map VALUES (4, 1, 1);
+INSERT INTO Suitability_List_Map VALUES (5, 1, NULL);
+INSERT INTO Suitability_List_Map VALUES (1, 2, 2);
+INSERT INTO Suitability_List_Map VALUES (2, NULL, 2);
+INSERT INTO Suitability_List_Map VALUES (3, 3, 3);
+INSERT INTO Suitability_List_Map VALUES (4, 3, NULL);
+INSERT INTO Suitability_List_Map VALUES (5, 4, 4);
+INSERT INTO Suitability_List_Map VALUES (2, 4, NULL);
+INSERT INTO Suitability_List_Map VALUES (3, 5, 5);
+INSERT INTO Suitability_List_Map VALUES (4, NULL, 6);
+INSERT INTO Suitability_List_Map VALUES (5, 6, NULL);
+INSERT INTO Suitability_List_Map VALUES (1, 7, 7);
+INSERT INTO Suitability_List_Map VALUES (2, NULL, 7);
+INSERT INTO Suitability_List_Map VALUES (3, 7, 8);
+INSERT INTO Suitability_List_Map VALUES (4, 8, 9);
+INSERT INTO Suitability_List_Map VALUES (5, 9, NULL);
+INSERT INTO Suitability_List_Map VALUES (6, 10, 10);
+
+INSERT INTO Instrument_List_Map VALUES (1, 1);
+INSERT INTO Instrument_List_Map VALUES (4, 1);
+INSERT INTO Instrument_List_Map VALUES (5, 2);
+INSERT INTO Instrument_List_Map VALUES (3, 2);
+INSERT INTO Instrument_List_Map VALUES (2, 2);
+INSERT INTO Instrument_List_Map VALUES (6, 3);
+INSERT INTO Instrument_List_Map VALUES (8, 3);
+INSERT INTO Instrument_List_Map VALUES (7, 4);
+INSERT INTO Instrument_List_Map VALUES (1, 5);
+INSERT INTO Instrument_List_Map VALUES (9, 5);
+INSERT INTO Instrument_List_Map VALUES (10, 5);
+INSERT INTO Instrument_List_Map VALUES (13, 6);
+INSERT INTO Instrument_List_Map VALUES (12, 7);
+INSERT INTO Instrument_List_Map VALUES (11, 7);
+INSERT INTO Instrument_List_Map VALUES (2, 8);
+INSERT INTO Instrument_List_Map VALUES (13, 8);
+INSERT INTO Instrument_List_Map VALUES (7, 8);
+INSERT INTO Instrument_List_Map VALUES (1, 9);
+INSERT INTO Instrument_List_Map VALUES (2, 9);
+INSERT INTO Instrument_List_Map VALUES (3, 10);
+INSERT INTO Instrument_List_Map VALUES (4, 10);
+
+INSERT INTO Performer_List_Map VALUES (1, 1);
+INSERT INTO Performer_List_Map VALUES (4, 1);
+INSERT INTO Performer_List_Map VALUES (5, 2);
+INSERT INTO Performer_List_Map VALUES (3, 2);
+INSERT INTO Performer_List_Map VALUES (2, 2);
+INSERT INTO Performer_List_Map VALUES (6, 3);
+INSERT INTO Performer_List_Map VALUES (8, 3);
+INSERT INTO Performer_List_Map VALUES (7, 4);
+INSERT INTO Performer_List_Map VALUES (1, 5);
+INSERT INTO Performer_List_Map VALUES (9, 5);
+INSERT INTO Performer_List_Map VALUES (10, 5);
+INSERT INTO Performer_List_Map VALUES (12, 6);
+INSERT INTO Performer_List_Map VALUES (12, 7);
+INSERT INTO Performer_List_Map VALUES (11, 7);
+INSERT INTO Performer_List_Map VALUES (2, 8);
+INSERT INTO Performer_List_Map VALUES (12, 8);
+INSERT INTO Performer_List_Map VALUES (7, 8);
+INSERT INTO Performer_List_Map VALUES (1, 9);
+INSERT INTO Performer_List_Map VALUES (2, 9);
+INSERT INTO Performer_List_Map VALUES (3, 10);
+INSERT INTO Performer_List_Map VALUES (4, 10);
+
+INSERT INTO Composer_List_Map VALUES (1, 1);
+INSERT INTO Composer_List_Map VALUES (2, 2);
+INSERT INTO Composer_List_Map VALUES (3, 3);
+INSERT INTO Composer_List_Map VALUES (4, 4);
+INSERT INTO Composer_List_Map VALUES (1, 5);
+INSERT INTO Composer_List_Map VALUES (2, 6);
+INSERT INTO Composer_List_Map VALUES (3, 7);
+INSERT INTO Composer_List_Map VALUES (4, 8);
+INSERT INTO Composer_List_Map VALUES (1, 9);
+INSERT INTO Composer_List_Map VALUES (2, 10);
+
+INSERT INTO Album_List_Map VALUES (1, 3);
+INSERT INTO Album_List_Map VALUES (2, 6);
+INSERT INTO Album_List_Map VALUES (3, 9);
+
+INSERT INTO Organisation_List_Map VALUES (1, 1);
+INSERT INTO Organisation_List_Map VALUES (1, 2);
+INSERT INTO Organisation_List_Map VALUES (3, 3);
+INSERT INTO Organisation_List_Map VALUES (2, 4);
+INSERT INTO Organisation_List_Map VALUES (2, 5);
+INSERT INTO Organisation_List_Map VALUES (4, 6);
+INSERT INTO Organisation_List_Map VALUES (4, 7);
+INSERT INTO Organisation_List_Map VALUES (5, 8);
+INSERT INTO Organisation_List_Map VALUES (5, 9);
+INSERT INTO Organisation_List_Map VALUES (5, 10);
+
+INSERT INTO Person_Details VALUES ('Sam', 'Yellow', '01111111111');
+INSERT INTO Person_Details VALUES ('John', 'Green', '01111111112');
+INSERT INTO Person_Details VALUES ('Tony', 'Red', '01111111113');
+INSERT INTO Person_Details VALUES ('Peter', 'White', '01111111114');
+INSERT INTO Person_Details VALUES ('Jackson', 'Blue', '01111111115');
+INSERT INTO Person_Details VALUES ('Charles', 'Mathews', '01111111116');
+
+INSERT INTO Request_Details VALUES ('A Song', 'Hope This Cheers You All Up', NULL);
+INSERT INTO Request_Details VALUES ('C Song', 'In Memory Of', 'My Brother Andrew');
+INSERT INTO Request_Details VALUES ('D Song', 'How You Have A Nice Day', 'My Son Harry');
+INSERT INTO Request_Details VALUES ('F Song', 'Happy Valentines Day', 'My Wife Emily');
+INSERT INTO Request_Details VALUES ('H Song', 'Love This Song', NULL);
+INSERT INTO Request_Details VALUES ('J Song', 'Who Doesnt Like This Song', NULL);
+INSERT INTO Request_Details VALUES ('B Song', 'ITS CHRISTMAS!!', NULL);
+INSERT INTO Request_Details VALUES ('C Song', 'I Adore This Song', 'Younger Brother Chris');
+INSERT INTO Request_Details VALUES ('A Song', 'I Love Playing This Song', NULL);
+INSERT INTO Request_Details VALUES ('A Song', 'I Adore This Song', 'Younger Brother Chris');
+INSERT INTO Request_Details VALUES ('A Song', 'I Love Playing This Song', NULL)
+INSERT INTO Request_Details VALUES ('Some Thing Only We Know', 'I Love Playing This Song All The Time', NULL)
+INSERT INTO Request_Details VALUES ('Some Thing Only We Know', 'I Adore This Song ALWAYS', 'Paul');
+INSERT INTO Request_Details VALUES ('Some Thing Only We Know', 'I Love Playing This Song ALWAYS', NULL)
+INSERT INTO Request_Details VALUES ('Some Thing Only We Know', 'I Adore This Song Sometimes', 'Chris');
+INSERT INTO Request_Details VALUES ('Some Thing Only We Know', 'I Love Playing This Song Sometimes', NULL)
+
+INSERT INTO Person_Request_Map VALUES (1, 1);
+INSERT INTO Person_Request_Map VALUES (2, 2);
+INSERT INTO Person_Request_Map VALUES (3, 3);
+INSERT INTO Person_Request_Map VALUES (4, 4);
+INSERT INTO Person_Request_Map VALUES (5, 5);
+INSERT INTO Person_Request_Map VALUES (6, 6);
+
+INSERT INTO Staff_Request_Map VALUES (5, 7);
+INSERT INTO Staff_Request_Map VALUES (3, 8);
+INSERT INTO Staff_Request_Map VALUES (1, 9);
+
+INSERT INTO Show_Request_Map VALUES (1, 1);
+INSERT INTO Show_Request_Map VALUES (2, 2);
+INSERT INTO Show_Request_Map VALUES (3, 3);
+INSERT INTO Show_Request_Map VALUES (4, 4);
+INSERT INTO Show_Request_Map VALUES (5, 5);
+INSERT INTO Show_Request_Map VALUES (6, 6);
+INSERT INTO Show_Request_Map VALUES (7, 7);
+INSERT INTO Show_Request_Map VALUES (8, 8);
+INSERT INTO Show_Request_Map VALUES (9, 9);

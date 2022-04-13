@@ -1,0 +1,10 @@
+INSERT INTO Show_Details VALUES ('Your Choice Show','Daily');
+INSERT INTO Show_Details VALUES ('Sunday Night Live','Weekly');
+INSERT INTO Show_Details VALUES ('Not Your Choice','Daily');
+INSERT INTO Show_Details VALUES ('Chart Show','Weekly');
+INSERT INTO Show_Details VALUES ('Late Nights With Sam','One Off Broadcast');
+INSERT INTO Show_Details VALUES ('Breakfast Show','Daily');
+INSERT INTO Show_Details VALUES ('Classics Hour','Weekly');
+INSERT INTO Show_Details VALUES ('Sports Zone','Monthly');
+INSERT INTO Show_Details VALUES ('Requests Show','Weekly');
+INSERT INTO Show_Details VALUES ('Dedication Show','Monthly');

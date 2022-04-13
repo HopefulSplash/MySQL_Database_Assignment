@@ -1,0 +1,9 @@
+INSERT INTO Song_Details VALUES ('A Song', '00:02:00', default);
+INSERT INTO Song_Details VALUES ('B Song',  '00:15:30', default);
+INSERT INTO Song_Details VALUES ('C Song', '00:45:30', default);
+INSERT INTO Song_Details VALUES ('D Song', '00:03:32', default);
+INSERT INTO Song_Details VALUES ('E Song', '00:03:12', default);
+INSERT INTO Song_Details VALUES ('F Song', '00:04:37', default);
+INSERT INTO Song_Details VALUES ('G Song', '00:05:56', default);
+INSERT INTO Song_Details VALUES ('H Song', '00:05:30', default);
+INSERT INTO Song_Details VALUES ('I Song', '00:02:30', default);

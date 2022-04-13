@@ -1,0 +1,369 @@
+CREATE TABLE Address_Details
+(
+address_Details_ID int IDENTITY(1,1) NOT NULL,
+address_Street varchar (35) NOT NULL,
+address_Postcode varchar (9) NOT NULL,
+address_City varchar (20) NOT NULL,
+address_County varchar (20) NOT NULL,
+
+CONSTRAINT pk_AddressID PRIMARY KEY (address_Details_ID)
+);
+
+CREATE TABLE Staff_Details
+(
+staff_Details_ID int IDENTITY(1,1) NOT NULL,
+address_Details_ID int NOT NULL,
+staff_Title varchar (6),
+staff_FName varchar (35) NOT NULL,
+staff_SName varchar (35) NOT NULL,
+staff_PNumber varchar (11),
+staff_Email varchar (255),
+staff_Role varchar (50) NOT NULL,
+
+CONSTRAINT pk_StaffID PRIMARY KEY (staff_Details_ID),
+CONSTRAINT fk_AddressID FOREIGN KEY (address_Details_ID) REFERENCES Address_Details (address_Details_ID),
+
+CONSTRAINT uc_StaffEmail UNIQUE (staff_Email),
+CONSTRAINT chk_StaffTitle CHECK (staff_Title ='Mr'OR staff_Title = 'Mrs' OR  staff_Title = 'Ms' OR staff_Title = 'Master' OR staff_Title = 'Miss')
+);
+
+CREATE TABLE Contract_Details
+(
+contract_Details_ID int IDENTITY(1,1) NOT NULL,
+contract_Type varchar (35) NOT NULL,
+contract_SDate date NOT NULL,
+contract_FDate date,
+
+CONSTRAINT pk_ContractID PRIMARY KEY (contract_Details_ID),
+CONSTRAINT chk_ContractType CHECK (contract_Type ='Full Time Permanent' OR contract_Type ='Part Time' OR contract_Type ='Casual Contract' OR contract_Type ='Volunteer' OR contract_Type ='Intern')
+);
+
+CREATE TABLE Staff_Contract_Map
+(
+staff_Contract_Map_ID int IDENTITY(1,1) NOT NULL,
+contract_Details_ID int NOT NULL,
+staff_Details_ID int NOT NULL,
+
+CONSTRAINT pk_StaffContractID PRIMARY KEY (staff_Contract_Map_ID),
+CONSTRAINT fk_ContractID FOREIGN KEY (contract_Details_ID) REFERENCES Contract_Details (contract_Details_ID),
+CONSTRAINT fk_StaffID_SCMap FOREIGN KEY (staff_Details_ID) REFERENCES Staff_Details (staff_Details_ID),
+);
+
+CREATE TABLE Comment_Details
+(
+comment_Details_ID int IDENTITY(1,1) NOT NULL,
+comment_Message varchar (255) NOT NULL,
+comment_Type varchar (8) NOT NULL,
+
+
+CONSTRAINT pk_CommentID PRIMARY KEY (comment_Details_ID),
+CONSTRAINT chk_CommentType CHECK (comment_Type ='Positive' OR comment_Type ='Negative')
+);
+
+CREATE TABLE Suitability_Details
+(
+suitability_Details_ID int IDENTITY(1,1) NOT NULL,
+suitability_Type varchar (16) NOT NULL,
+
+CONSTRAINT pk_SuitabilityID PRIMARY KEY (suitability_Details_ID),
+CONSTRAINT uc_Suitability UNIQUE (suitability_Type)
+);
+
+
+CREATE TABLE Instrument_Details
+(
+instrument_Details_ID int IDENTITY(1,1) NOT NULL,
+instrument_Name varchar (50) NOT NULL,
+
+CONSTRAINT pk_InstrumentID PRIMARY KEY (instrument_Details_ID)
+);
+
+
+
+CREATE TABLE Genre_Details
+(
+genre_Details_ID int IDENTITY(1,1) NOT NULL,
+genre_Type varchar (40) NOT NULL,
+
+CONSTRAINT pk_GenreID PRIMARY KEY (genre_Details_ID),
+CONSTRAINT uc_Genre UNIQUE (genre_Type),
+);
+
+CREATE TABLE Show_Details
+(
+show_Details_ID int IDENTITY(1,1) NOT NULL,
+show_Name varchar (255) NOT NULL,
+show_Type varchar (20) NOT NULL,
+
+CONSTRAINT pk_ShowID PRIMARY KEY (show_Details_ID),
+CONSTRAINT chk_ShowType CHECK (show_Type ='One Off Broadcast' OR show_Type ='Daily' OR show_Type ='Weekly' OR show_Type ='Monthly')
+);
+
+CREATE TABLE Song_Details
+(
+song_Details_ID int IDENTITY(1,1) NOT NULL,
+song_Title varchar (255) NOT NULL,
+song_Duration time NOT NULL,
+song_Play_Count int DEFAULT 0, 
+song_Added date DEFAULT getDate(), 
+
+CONSTRAINT pk_SongID PRIMARY KEY (song_Details_ID)
+);
+
+CREATE TABLE Organisation_Details
+(
+organisation_Details_ID int IDENTITY(1,1) NOT NULL,
+organisation_Name varchar (255) NOT NULL,
+organisation_Type varchar (255) NOT NULL,
+organisation_Local bit NOT NULL,
+organisation_Founded date,
+
+CONSTRAINT pk_OrganisationID PRIMARY KEY (organisation_Details_ID),
+CONSTRAINT chk_OrganisationLocal CHECK (organisation_Local = 0 OR organisation_Local = 1)
+);
+
+CREATE TABLE Album_Details
+(
+album_Details_ID int IDENTITY(1,1) NOT NULL,
+album_Name varchar (255) NOT NULL,
+
+CONSTRAINT pk_AlbumID PRIMARY KEY (album_Details_ID)
+);
+
+CREATE TABLE Composer_Details
+(
+composer_Details_ID int IDENTITY(1,1) NOT NULL,
+composer_FName varchar (35) NOT NULL,
+composer_SName varchar (35) NOT NULL,
+
+CONSTRAINT pk_ComposerID PRIMARY KEY (composer_Details_ID)
+);
+
+CREATE TABLE Performer_Details
+(
+performer_Details_ID int IDENTITY(1,1) NOT NULL,
+performer_FName varchar (35) NOT NULL,
+performer_SName varchar (35) NOT NULL,
+performer_Role varchar (50) NOT NULL,
+
+CONSTRAINT pk_PerformerID PRIMARY KEY (performer_Details_ID)
+);
+
+CREATE TABLE Suitability_List_Map
+(
+suitability_List_Map_ID int IDENTITY(1,1) NOT NULL,
+suitability_Details_ID int NOT NULL,
+song_Details_ID int,
+show_Details_ID int,
+
+CONSTRAINT pk_SuitabilityListID PRIMARY KEY (suitability_List_Map_ID),
+CONSTRAINT fk_SuitabilityID FOREIGN KEY (suitability_Details_ID) REFERENCES Suitability_Details (suitability_Details_ID),
+CONSTRAINT fk_SongID_Suitability FOREIGN KEY (song_Details_ID) REFERENCES Song_Details (song_Details_ID),
+CONSTRAINT fk_ShowID_Suitability FOREIGN KEY (show_Details_ID) REFERENCES Show_Details (show_Details_ID)
+);
+
+CREATE TABLE Composer_List_Map
+(
+composer_List_Map_ID int IDENTITY(1,1) NOT NULL,
+composer_Details_ID int NOT NULL,
+song_Details_ID int NOT NULL,
+
+CONSTRAINT pk_ComposerListID PRIMARY KEY (composer_List_Map_ID),
+CONSTRAINT fk_ComposerID FOREIGN KEY (composer_Details_ID) REFERENCES Composer_Details (composer_Details_ID),
+CONSTRAINT fk_SongID_Composer FOREIGN KEY (song_Details_ID) REFERENCES Song_Details (song_Details_ID)
+);
+
+CREATE TABLE Performer_List_Map
+(
+performer_List_Map_ID int IDENTITY(1,1) NOT NULL,
+performer_Details_ID int NOT NULL,
+song_Details_ID int NOT NULL,
+
+CONSTRAINT pk_PerformerListID PRIMARY KEY (performer_List_Map_ID),
+CONSTRAINT fk_PerformerID FOREIGN KEY (performer_Details_ID) REFERENCES Performer_Details (performer_Details_ID),
+CONSTRAINT fk_SongID_Performer FOREIGN KEY (song_Details_ID) REFERENCES Song_Details (song_Details_ID)
+);
+
+CREATE TABLE Album_List_Map
+(
+album_List_Map_ID int IDENTITY(1,1) NOT NULL,
+album_Details_ID int NOT NULL,
+song_Details_ID int NOT NULL,
+
+CONSTRAINT pk_AlbumListID PRIMARY KEY (album_List_Map_ID),
+CONSTRAINT fk_AlbumID FOREIGN KEY (album_Details_ID) REFERENCES Album_Details (album_Details_ID),
+CONSTRAINT fk_SongID_Album FOREIGN KEY (song_Details_ID) REFERENCES Song_Details (song_Details_ID)
+);
+
+CREATE TABLE Organisation_List_Map
+(
+organisation_List_Map int IDENTITY(1,1) NOT NULL,
+organisation_Details_ID int NOT NULL,
+song_Details_ID int NOT NULL,
+
+CONSTRAINT pk_OrganisationListID PRIMARY KEY (organisation_List_Map),
+CONSTRAINT fk_OrganisationID FOREIGN KEY (organisation_Details_ID) REFERENCES Organisation_Details (organisation_Details_ID),
+CONSTRAINT fk_SongID_Organisation FOREIGN KEY (song_Details_ID) REFERENCES Song_Details (song_Details_ID)
+);
+
+CREATE TABLE Instrument_List_Map
+(
+instrument_List_Map int IDENTITY(1,1) NOT NULL,
+instrument_Details_ID int NOT NULL,
+song_Details_ID int NOT NULL,
+
+CONSTRAINT pk_InstrumentListID PRIMARY KEY (instrument_List_Map),
+CONSTRAINT fk_InstrumentID FOREIGN KEY (instrument_Details_ID) REFERENCES Instrument_Details (instrument_Details_ID),
+CONSTRAINT fk_SongID_Instrument FOREIGN KEY (song_Details_ID) REFERENCES Song_Details (song_Details_ID)
+);
+
+CREATE TABLE Genre_List_Map
+(
+genre_List_Map int IDENTITY(1,1) NOT NULL,
+genre_Details_ID int NOT NULL,
+song_Details_ID int,
+show_Details_ID int,
+
+CONSTRAINT pk_GenreListID PRIMARY KEY (genre_List_Map),
+CONSTRAINT fk_GenreID FOREIGN KEY (genre_Details_ID) REFERENCES Genre_Details (genre_Details_ID),
+CONSTRAINT fk_SongID_Genre FOREIGN KEY (song_Details_ID) REFERENCES Song_Details (song_Details_ID),
+CONSTRAINT fk_ShowID_Genre FOREIGN KEY (show_Details_ID) REFERENCES Show_Details (show_Details_ID)
+);
+
+CREATE TABLE Playlist_Details
+(
+playlist_Details_ID int IDENTITY(1,1) NOT NULL,
+playlist_Name varchar (255) NOT NULL,
+
+CONSTRAINT pk_PlaylistID PRIMARY KEY (playlist_Details_ID)
+);
+
+CREATE TABLE Show_Instance
+(
+show_Instance_ID int IDENTITY(1,1) NOT NULL,
+show_Details_ID int NOT NULL,
+playlist_Details_ID int,
+show_Air_Date date NOT NULL,
+show_Air_Time time NOT NULL,
+
+CONSTRAINT pk_ShowInstanceID PRIMARY KEY (show_Instance_ID),
+CONSTRAINT fk_ShowID_ShowInstance FOREIGN KEY (show_Details_ID) REFERENCES Show_Details (show_Details_ID),
+CONSTRAINT fk_PlaylistID_ShowInstance FOREIGN KEY (playlist_Details_ID) REFERENCES Playlist_Details (playlist_Details_ID)
+);
+
+CREATE TABLE Show_Comment_Map
+(
+Show_Comment_Map_ID int IDENTITY(1,1) NOT NULL,
+comment_Details_ID int NOT NULL,
+show_Instance_ID int NOT NULL,
+
+CONSTRAINT pk_ShowCommentID PRIMARY KEY (Show_Comment_Map_ID),
+CONSTRAINT fk_CommentID FOREIGN KEY (comment_Details_ID) REFERENCES Comment_Details (comment_Details_ID),
+CONSTRAINT fk_ShowInstanceID_SCMap FOREIGN KEY (show_Instance_ID) REFERENCES Show_Instance (show_Instance_ID)
+);
+
+CREATE TABLE Show_Staff_Map
+(
+show_Staff_Map int IDENTITY(1,1) NOT NULL,
+staff_Details_ID int NOT NULL,
+show_Instance_ID int NOT NULL,
+show_Key_Contact bit NOT NULL,
+
+CONSTRAINT pk_ShowStaffID PRIMARY KEY (show_Staff_Map),
+CONSTRAINT fk_Staff_Details_SSMap FOREIGN KEY (staff_Details_ID) REFERENCES Staff_Details (staff_Details_ID),
+CONSTRAINT fk_ShowInstanceID_SSMap FOREIGN KEY (show_Instance_ID) REFERENCES Show_Instance (show_Instance_ID),
+CONSTRAINT chk_ShowContact CHECK (show_Key_Contact = 0 OR show_Key_Contact = 1)
+);
+
+CREATE TABLE Playlist_Song_Map
+(
+playlist_Song_Map_ID int IDENTITY(1,1) NOT NULL,
+playlist_Details_ID int NOT NULL,
+song_Details_ID int NOT NULL,
+staff_Details_ID int NOT NULL,
+
+CONSTRAINT pk_PlaylistSongID PRIMARY KEY (playlist_Song_Map_ID),
+CONSTRAINT fk_PlaylistID FOREIGN KEY (playlist_Details_ID) REFERENCES Playlist_Details (playlist_Details_ID),
+CONSTRAINT fk_SongID_PSMap FOREIGN KEY (song_Details_ID) REFERENCES Song_Details (song_Details_ID),
+CONSTRAINT fk_ShowID_PSMap FOREIGN KEY (staff_Details_ID) REFERENCES Staff_Details (staff_Details_ID)
+);
+
+CREATE TABLE Person_Details
+(
+person_Details_ID int IDENTITY(1,1) NOT NULL,
+person_FName varchar (35) NOT NULL,
+person_SName varchar (35) NOT NULL,
+person_PNumber varchar (11) NOT NULL,
+
+CONSTRAINT pk_personID PRIMARY KEY (person_Details_ID)
+);
+
+CREATE TABLE Request_Details
+(
+request_Details_ID int IDENTITY(1,1) NOT NULL,
+request_Song varchar (255) NOT NULL,
+request_Reason varchar (255) NOT NULL,
+request_Dedication varchar (255),
+
+CONSTRAINT pk_RequestID PRIMARY KEY (request_Details_ID)
+);
+
+CREATE TABLE Person_Request_Map
+(
+person_Request_Map int IDENTITY(1,1) NOT NULL,
+person_Details_ID int NOT NULL,
+request_Details_ID int NOT NULL
+
+CONSTRAINT pk_PersonReuqestID PRIMARY KEY (person_Request_Map),
+CONSTRAINT fk_PersonID FOREIGN KEY (person_Details_ID) REFERENCES Person_Details (person_Details_ID),
+CONSTRAINT fk_RequestID_Public FOREIGN KEY (request_Details_ID) REFERENCES Request_Details (request_Details_ID)
+);
+
+CREATE TABLE Staff_Request_Map
+(
+staff_Request_Map int IDENTITY(1,1) NOT NULL,
+staff_Details_ID int NOT NULL,
+request_Details_ID int NOT NULL
+
+CONSTRAINT pk_StaffReuqestID PRIMARY KEY (staff_Request_Map),
+CONSTRAINT fk_StaffID_Request FOREIGN KEY (staff_Details_ID) REFERENCES Staff_Details (staff_Details_ID),
+CONSTRAINT fk_RequestID_Staff FOREIGN KEY (request_Details_ID) REFERENCES Request_Details (request_Details_ID)
+);
+
+
+CREATE TABLE Show_Request_Map
+(
+show_Request_Map int IDENTITY(1,1) NOT NULL,
+request_Details_ID int NOT NULL,
+show_Instance_ID int NOT NULL,
+
+CONSTRAINT pk_ShowReuqestID PRIMARY KEY (show_Request_Map),
+CONSTRAINT fk_ShowInstanceID_Request FOREIGN KEY (show_Instance_ID) REFERENCES Show_Instance (show_Instance_ID),
+CONSTRAINT fk_RequestID_Show FOREIGN KEY (request_Details_ID) REFERENCES Request_Details (request_Details_ID)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

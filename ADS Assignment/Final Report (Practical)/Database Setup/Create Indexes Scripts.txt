@@ -1,0 +1,2 @@
+CREATE NONCLUSTERED INDEX nc_index_SongTitle ON Song_Details(song_Title);
+CREATE NONCLUSTERED INDEX nc_index_OrganisationLocal ON Organisation_Details(organisation_Local);

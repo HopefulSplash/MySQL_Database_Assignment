@@ -1,0 +1,101 @@
+Create CommentsLog
+{
+   Personal:
+	{
+			firstName: TEXT,
+			secondName:TEXT,
+			DOB: TEXT,
+			addressOne: TEXT,
+			addressTwo: TEXT,
+			city: TEXT,
+	},
+   Contact: 
+	{
+			postcode: TEXT,,
+			phone: [Phone 1, Phone 2]
+			email: TEXT,
+	 },
+   comments: [	
+      {
+        		subject: TEXT,
+         		message: TEXT,
+         		dateCreated: DATE_TIME,
+	 		isReported: TEXT
+      },
+      {
+         		subject: TEXT,
+         		message: TEXT,
+         		dateCreated: DATE_TIME,
+	 		isReported: TEXT
+      }
+   ]
+}
+
+cd c:\
+
+C:\MongoDB\bin\mongo.exe
+
+use CustomerCommentLog
+
+db.post.insert({Personal:{firstName: 'Simon',secondName: 'Peterson',DOB: '24:23:1393',addressOne: '24',addressTwo: 'Zoo Lane',city: 'Cupcake Town'},comments: [{subject: 'MY F**KING 2 year can play better Music',message: 'This Radio Station is a joke please stop spamming adverts and playing really bad music i will take action!!',dateCreated: new Date('Mar 14, 2013'),isReported: 'Yes'}]});
+
+db.post.insert({comments: [{message: 'I WILL MAKE YOU SUFFER',isReported: 'Yes'}]});
+
+db.post.insert({Personal:{firstName: 'DIE',secondName: 'NOW'},comments: [{subject: 'BOMB BOMB BOMB',message: 'Thnk BOMB',isReported: 'Yes'}, {subject: 'Burning Radio Station',message: 'Oooops I Dropped A Match',isReported: 'Yes'}]});
+
+db.post.insert({Personal:{firstName: 'Harry',secondName: 'Clewlow',DOB: '14:03:1993',addressOne: '122',addressTwo: 'Corp Street',city: 'Stafford',postcode: 'ST16 3LS'},Contact: {phone: ['01777777777', '03777777778'] ,email: 'Harry.Clewlow.1993@gmail.com'},comments: [{subject: 'I Love This Show',message: 'You Make My Day',dateCreated: new Date('Jun 23, 2012'),isReported: 'No'},{subject: 'Nice Show ',message: 'Good Show Guys Its Alot Better',dateCreated: new Date('Jun 23, 2012'),isReported: 'No'}]});
+
+//finding all in collection
+db.post.find().pretty();
+
+//finding the comments by one person
+db.post.find({"Personal.firstName" : "Harry" ,"Personal.secondName" : "Clewlow"}).pretty();
+
+//finding the comments that have been reported
+db.post.find({ comments: { $elemMatch: { isReported: "Yes"}}}).pretty();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//adding more comments 
+
+db.CustomerCommentsLog.update({"Personal.firstName":"Harry","Personal.secondName":"Clewlow"},{$push:{Comments: { commentName: "Comment 2", commentReported: "No", commentDate: "05-December-2013", commentText: "Nice Show Fred" }}});
+
+db.CustomerCommentsLog.update({"Personal.firstName":"Harry","Personal.secondName":"Clewlow"},{$push:{Comments: { commentName: "Comment 3", commentReported: "No", commentDate: "06-December-2013", commentText: "Classical Hour was awesome thanks guys" }}});
+
+db.CustomerCommentsLog.update({"Personal.firstName":"Sam","Personal.secondName":"Dowdall"},{$push:{Comments: { commentName: "Comment 2", commentReported: "Yes", commentDate: "03-December-2013", commentText: "I WILL KILL YOU ALL" }}});
+
+
+db.CustomerCommentsLog.update({"Personal.firstName":"David","Personal.secondName":"Croft"},{$push:{Comments: { commentName: "Comment 2", commentReported: "No", commentDate: "02-December-2013", commentText: "Nice Music GUYS" }}});
+
+db.CustomerCommentsLog.update({"Personal.firstName":"David","Personal.secondName":"Croft"},{$push:{Comments: { commentName: "Comment 3", commentReported: "Yes", commentDate: "06-December-2013", commentText: "Your the Bomb hint hint" }}});
+
+db.CustomerCommentsLog.update({"Personal.firstName":"David","Personal.secondName":"Croft"},{$push:{Comments: { commentName: "Comment 4", commentReported: "Yes", commentDate: "11-December-2013", commentText: "HAH GAY!!!!!!!!!!!!!!" }}});
+
+
+
+
+
+
+
+
+
+
+ASK ABOUT 
+
+embedded documents....
+
+
